@@ -10,5 +10,6 @@ public class AllStayAtHome extends Population{
     for(int i=0; i<this.people.length; i++){
       this.addPerson(new StayAtHome());
     }
+    //123
   }
 }
