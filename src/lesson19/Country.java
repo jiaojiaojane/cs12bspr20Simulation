@@ -8,6 +8,8 @@ public class Country {
 	int numRecovered=0;
 	int numPeople=0;
 
+	//hellohello
+
 	/**
 	 * places is a 2d array representing the places a person could be
 	 * each entry can contain either a Person or null
