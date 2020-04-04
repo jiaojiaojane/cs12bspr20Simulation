@@ -4,7 +4,6 @@ public class MixedPopulation extends Population{
   int numShelterInPlace;
   int numEssential;
   int numOthers;
-  //122
 
   public MixedPopulation(int numShelterInPlace, int numEssential, int numOthers){
     super(numShelterInPlace + numEssential + numOthers);
