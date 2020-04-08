@@ -2,7 +2,6 @@
  * 
  */
 package lesson19;
-import java.util.Random;
 
 /**
  * @author Feipeng Qi
@@ -10,7 +9,6 @@ import java.util.Random;
  */
 public class MoveEvery7Days extends Person {
 	private int counter=0;
-	private Random r = new Random();
 
 	/**
 	 * @param x
