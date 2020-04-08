@@ -4,6 +4,7 @@ import java.util.Random;
 /**
  *  
  * @author tim
+ * Jane Wang
  *
  */
 
