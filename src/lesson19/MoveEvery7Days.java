@@ -28,8 +28,8 @@ public class MoveEvery7Days extends Person {
 	public void tryToMove() {
 		if(this.counter%7==0) {
 			tryToMoveRandomly();
-			this.counter++;
 		}
+		this.counter++;
 	}
 	
     
