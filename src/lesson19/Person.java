@@ -15,7 +15,7 @@ import java.util.Random;
 
 */
 
-public class Person {
+public abstract class Person {
   // the persons fate depends on some random variables...
   private Random random = new Random();
 
@@ -91,14 +91,13 @@ public class Person {
 
 	}
 
-  void tryToMove(){
-		tryToMoveRandomly();
-	}
+	public abstract void tryToMove();
+	
   /**
 	   try to move one step in a random direction.
 		 if they way is blocked then don't move.
 	*/
-  void tryToMoveRandomly(){
+	void tryToMoveRandomly(){
     int dx = random.nextInt(3)-1; // -1,0,1
     int dy = random.nextInt(3)-1; // -1,0,1
     if (isOK(this.x+dx, this.y+dy,this.country)) {
@@ -111,15 +110,15 @@ public class Person {
 		They move from normal to infected
 		or from infected to recovered.
 	*/
-  void checkForInfection(){
-    if (this.exposed && ! this.infected) {
-			this.infected = true;
-			this.infectionTime = this.age;
-		}
-		this.age++;
-		if (infected && !this.recovered && (this.age - this.infectionTime > this.recoveryTime)) {
-			this.recovered = true;
-		}
+	void checkForInfection(){
+	    if (this.exposed && ! this.infected) {
+				this.infected = true;
+				this.infectionTime = this.age;
+			}
+			this.age++;
+			if (infected && !this.recovered && (this.age - this.infectionTime > this.recoveryTime)) {
+				this.recovered = true;
+			}
   }
 
 
