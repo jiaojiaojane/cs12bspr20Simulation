@@ -57,9 +57,7 @@ public class RunSimulation {
 		System.out.println("\nFinal State of the Country");
 		country.printCountry();
 
+		Random random = new Random();
+		AnalyzeSimulation analysis = new AnalyzeSimulation(random.nextInt() + 100, population, country);
 	}
-
-
-
-
 }
