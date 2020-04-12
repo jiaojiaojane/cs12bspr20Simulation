@@ -11,5 +11,5 @@ public class Skeptic extends Person {
     public void tryToMove() {
         super.tryToMoveRandomly();
     }
+    //3333777
 }
-
