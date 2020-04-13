@@ -7,7 +7,7 @@ package lesson19;
  * @author Feipeng Qi
  *
  */
-public class MoveEvery7Days extends Person {
+public class MoveEvery7Days extends Skeptic {
 	private int counter=0;
 
 	/**
