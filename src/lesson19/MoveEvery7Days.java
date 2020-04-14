@@ -15,8 +15,13 @@ public class MoveEvery7Days extends Person {
 		// TODO Auto-generated constructor stub
 	}
 
+	public MoveEvery7Days(){
+		super();
+	}
+
 	/**
 	 * add a restriction to the tryToMove method so that the person moves every 7 days.
+>>>>>>> 2ad02c30e868e424f47e1f9e451b84c37ed9501a
 	 */
 	public void tryToMove() {
 		if(this.counter%7==0) {
