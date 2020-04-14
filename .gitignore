@@ -2,3 +2,4 @@
 *.class
 .DS_Store
 *~
+src/lesson19/MoveEvery7Days.java

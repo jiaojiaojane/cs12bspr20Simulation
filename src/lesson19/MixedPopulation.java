@@ -8,7 +8,7 @@ public class MixedPopulation extends Population{
   int numMoveEvery7Days;
 
   public MixedPopulation(int numShelterInPlace, int numEssential, int numSkeptic, int numFrequentFliers, int numMoveEvery7Days){
-    super(numShelterInPlace + numEssential + numSkeptic + numFrequentFliers);
+    super(numShelterInPlace + numEssential + numSkeptic + numFrequentFliers + numMoveEvery7Days);
     this.numShelterInPlace = numShelterInPlace;
     this.numEssential = numEssential;
     this.numSkeptic = numSkeptic;
