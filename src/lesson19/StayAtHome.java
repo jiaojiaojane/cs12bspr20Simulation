@@ -8,7 +8,6 @@ public class StayAtHome extends Person{
 
 	public void tryToMove() {
 		// don't move
-		return;
 	}
 
 }

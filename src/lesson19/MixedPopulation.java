@@ -13,7 +13,6 @@ public class MixedPopulation extends Population{
     this.numEssential = numEssential;
     this.numSkeptic = numSkeptic;
     this.numFrequentFliers = numFrequentFliers;
-
   }
 
   public void createPeople(){

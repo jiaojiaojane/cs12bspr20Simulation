@@ -4,6 +4,14 @@ import java.util.Random;
 public class FrequentFlier extends Person {
     private Random random = new Random();
 
+    public FrequentFlier(int x, int y, Country country) {
+         super(x, y, country);
+    }
+
+    public FrequentFlier() {
+        super();
+    }
+
     @Override
     public void tryToMove() {
         int i = random.nextInt(country.places.length);
@@ -15,8 +23,6 @@ public class FrequentFlier extends Person {
         }
         //System.out.println("placing "+p.id+" at "+i+","+j);
 
-        this.setPosition(i,j);
-        country.places[i][j]=this;
-
+        super.moveTo(i,j);
     }
 }

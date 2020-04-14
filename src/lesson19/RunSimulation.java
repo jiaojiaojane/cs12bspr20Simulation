@@ -2,7 +2,7 @@ package lesson19;
 
 import java.util.Random;
 /**
- *  
+ *
  * @author tim
  * Jane Wang
  *
@@ -26,17 +26,19 @@ public class RunSimulation {
 		int numFrequentFliers = Integer.parseInt(args[5]);
 
 		// next we create the population and the country
-		Population population;
+		//Population population;
 
 		//population = new Population(numPeople);
 		//population = new AllStayAtHome(numPeople);
 		//int numEssential = numPeople/10;
 		//int numOther = numPeople/20;
 		//int numStayHome = numPeople - numEssential - numOther;
-		population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFrequentFliers);
+		Population population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFrequentFliers);
+
 		population.createPeople();
 
 		Country country = new Country(width,height);
+
 		// and add a link to the population in the country
 		country.population = population;
 		// next we place the people into the country randomly
