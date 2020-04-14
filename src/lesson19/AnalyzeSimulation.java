@@ -1,44 +1,51 @@
 package lesson19;
 
-import java.util.Random;
-
 public class AnalyzeSimulation {
 
 	private int repetitions;
-	private Country country;
-	private Population population;
 	private int numOfDays, numOfInfected, peakInfectedLevel;
 	
 	
-	public AnalyzeSimulation(int repetitions, Population population, Country country) {
+	public AnalyzeSimulation(int repetitions) {
 		this.repetitions = repetitions;
-		this.population = population;
-		this.country = country;
 		this.numOfDays = this.numOfInfected = peakInfectedLevel = 0;
 	}
 	
-	public void stimulate() {
+	public void simulate() {
 		for(int i = 0; i < this.repetitions; i++) {
+			//population and country to be analyzed, can be modified with different parameters
+			Population analyzePopulation = new MixedPopulation(20, 30, 20, 30, 20);
+			analyzePopulation.createPeople();
+			Country analyzeCountry = new Country(40, 20);
+			analyzeCountry.population = analyzePopulation;
+			analyzePopulation.placePeople(analyzeCountry);
+			
 			int days = 0;
-			int infected = 0;
+			int prevInfected = 0;
 			int maximum = 0;
-			while(country.numInfected >= 0) {
-				country.simulateOneStep();
-				if(maximum < country.numInfected - infected) {
-					maximum = country.numInfected - infected;
+			do {
+				analyzeCountry.simulateOneStep();
+				days++;
+				//find the peak infected level between every two days
+				if(maximum < analyzeCountry.numInfected - prevInfected) {
+					maximum = analyzeCountry.numInfected - prevInfected;
 				}
-				if(infected < country.numInfected) {
-					infected = country.numInfected;
+				//find the total number of infected in this simulation
+				if(prevInfected < analyzeCountry.numInfected) {
+					prevInfected = analyzeCountry.numInfected;
 				}
-				days++;	
 			}
-			System.out.println("Repetition " + (repetitions + 1) + ": numOfDays = " + days + "  numOfInfected = "
-					+ infected + "  peakInfectedLevel = " + maximum); 
-			numOfDays = (numOfDays + days)/(repetitions + 1);
-			numOfInfected = (numOfInfected + infected)/(repetitions + 1);
-			peakInfectedLevel = (peakInfectedLevel + infected)/(repetitions + 1);
+			while(analyzeCountry.numInfected != 0 );
+			
+			//result of each simulation 
+			System.out.println("Repetition " + (i + 1) + ": numOfDays = " + days + "  numOfInfected = "
+					+ prevInfected + "  peakInfectedLevel = " + maximum); 
+			this.numOfDays += days;
+			this.numOfInfected += prevInfected;
+			this.peakInfectedLevel += maximum;
 		}
-		System.out.println("Average Result: numOfDays = " + numOfDays + "  numOfInfected = "
-				+ numOfInfected + "  peakInfectedLevel = " + peakInfectedLevel); 
+		//average result of 100 simulations
+		System.out.printf("%s%.0f%s%.0f%s%.0f", "Average Result: numOfDays = " , (double) numOfDays / this.repetitions, "  numOfInfected = ",
+				 (double)numOfInfected / this.repetitions, "  peakInfectedLevel = ", (double)peakInfectedLevel / this.repetitions);
 	}
 }

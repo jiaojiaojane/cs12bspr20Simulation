@@ -1,5 +1,11 @@
 package lesson19;
 
+/**
+ * @author Jane Wang, Feipeng Qi, Qiming Feng, Wenjie Wang
+ * PA05
+ * 04/13/20
+ */
+
 public class Country {
 
 	/** these are summary statistics about the epidemic
@@ -8,7 +14,6 @@ public class Country {
 	int numRecovered=0;
 	int numPeople=0;
 
-	//hellohello
 
 	/**
 	 * places is a 2d array representing the places a person could be

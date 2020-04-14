@@ -12,7 +12,10 @@ import java.util.Random;
 
  The tick() method simulates them moving one step in the grid
  in some random direction as long as no one else is there.
-
+*
+* @author Jane Wang, Feipeng Qi, Qiming Feng, Wenjie Wang
+* PA05
+* 04/13/20
 */
 
 public abstract class Person {

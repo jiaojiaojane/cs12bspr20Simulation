@@ -2,10 +2,9 @@ package lesson19;
 
 import java.util.Random;
 /**
- *
- * @author tim
- * Jane Wang
- *
+ * @author Jane Wang, Feipeng Qi, Qiming Feng, Wenjie Wang
+ * PA05
+ * 04/13/20
  */
 
 public class RunSimulation {
@@ -27,18 +26,18 @@ public class RunSimulation {
 		int numMoveEvery7Days = Integer.parseInt(args[6]);
 
 		// next we create the population and the country
-		//Population population;
+		Population population;
 
 		//population = new Population(numPeople);
 		//population = new AllStayAtHome(numPeople);
 		//int numEssential = numPeople/10;
 		//int numOther = numPeople/20;
 		//int numStayHome = numPeople - numEssential - numOther;
-		Population population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFrequentFliers,numMoveEvery7Days);
-
+		population = new MixedPopulation(numStayHome, numEssential, numSkeptic, numFrequentFliers, numMoveEvery7Days);
+		
 		population.createPeople();
 
-		Country country = new Country(width,height);
+		Country country = new Country(width, height);
 
 		// and add a link to the population in the country
 		country.population = population;
@@ -61,7 +60,11 @@ public class RunSimulation {
 		System.out.println("\nFinal State of the Country");
 		country.printCountry();
 
-		Random random = new Random();
-		AnalyzeSimulation analysis = new AnalyzeSimulation(random.nextInt() + 100, population, country);
+		System.out.println();
+
+		//analyze 100 or more simulations
+		AnalyzeSimulation analysis = new AnalyzeSimulation(100);
+		analysis.simulate();
+	
 	}
 }

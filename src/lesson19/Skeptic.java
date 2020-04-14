@@ -1,5 +1,10 @@
 package lesson19;
 
+/**
+ * @author Wenjie Wang
+ * PA05
+ * 04/13/20
+ */
 
 public class Skeptic extends Person {
 
@@ -11,9 +16,10 @@ public class Skeptic extends Person {
 	    super();
    }
 
-    @Override
+    /**
+     * always tries to move every tick.
+     */
     public void tryToMove() {
         super.tryToMoveRandomly();
     }
-    //3333777
 }

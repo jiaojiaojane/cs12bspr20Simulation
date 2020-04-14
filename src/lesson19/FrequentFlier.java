@@ -1,6 +1,12 @@
 package lesson19;
 import java.util.Random;
 
+/**
+ * @author Qiming Feng
+ * PA05
+ * 04/13/20
+ */
+
 public class FrequentFlier extends Person {
     private Random random = new Random();
 
@@ -12,7 +18,9 @@ public class FrequentFlier extends Person {
         super();
     }
 
-    @Override
+    /**
+     * When this person move they jump to a random, unoccupied space on the board.
+     */
     public void tryToMove() {
         int i = random.nextInt(country.places.length);
         int j = random.nextInt(country.places[i].length);
